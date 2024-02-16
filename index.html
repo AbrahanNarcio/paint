@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Canvas</title>
+</head>
+
+<body>
+  <header id="main-header">
+    <nav>
+      <ul>
+        <li><button id="draw-button">Dibujar</button></li>
+        <li><button id="basico-button">Linea (Metodo basico)</button></li>
+        <li><button id="bresenham-button">Linea (Bresenham)</button></li>
+        <li> <button id="dda-button">Linea (DDA)</button></li>
+        <li><button id="cuadrado-button">Cuadrado</button></li>
+        <li><button id="circulo-button">Circulo</button></li>
+        <!-- <button id="poligono-button">Poligono</button> -->
+        <li><button id="erase-button">Borrar</button></li>
+        <li><label for="line-width">Grosor de línea:</label>
+        <input type="range" id="line-width" min="1" max="10" value="5"></li>
+        <li><label for="color-picker">Color de línea:</label>
+        <input type="color" id="color-picker" value="#000000"></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="main-container">
+
+    <div class="controls-container">
+    </div>
+
+    <div class="canvas-container">
+      <canvas id="main-canvas" width="800" height="800"></canvas>
+    </div>
+
+  </div>
+  <script src="index.js"></script>
+
+  <!-- <footer id="main-footer">
+		<p>&copy; Abrahan Narcio</p>
+	</footer>  -->
+</body>
+</html>
