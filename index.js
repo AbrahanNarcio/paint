@@ -16,6 +16,7 @@ let activobresenham = false;
 let activocuadrado = false;
 let activoDDA = false;
 let activocirculo = false;
+let activopoligono = false;
 
 let posicion = mainCanvas.getBoundingClientRect();
 correccionX = posicion.x;
@@ -152,6 +153,12 @@ function drawcirculo(x1, x2, y1, y2) {
   context.stroke();
 }
 
+function drawpoligono(x1, x2, y1, y2) {
+  context.beginPath();
+  context.moveTo();
+  
+}
+
 const cambiarHerramienta = (evt) => {
   isDrawing = !isDrawing;
   activometobasico = false;
@@ -160,6 +167,7 @@ const cambiarHerramienta = (evt) => {
   activoDDA = false;
   activocirculo = false;
   isErasing = false;
+  activopoligono = false;
   startX = startY = endX = endY = undefined; // Reinicia las variables
   mainCanvas.style.cursor = isDrawing ? "crosshair" : "default";
 };
@@ -172,6 +180,7 @@ const cambiarMetodoBasico = (evt) => {
   activoDDA = false;
   activocirculo = false;
   isErasing = false;
+  activopoligono = false;
   startX = startY = endX = endY = undefined; // Reinicia las variables
   mainCanvas.style.cursor = activometobasico ? "crosshair" : "default";
 };
@@ -184,6 +193,7 @@ const cambiarBresenham = (evt) => {
   activoDDA = false;
   activocirculo = false;
   isErasing = false;
+  activopoligono = false;
   startX = startY = endX = endY = undefined; // Reinicia las variables
   mainCanvas.style.cursor = activobresenham ? "crosshair" : "default";
 };
@@ -196,6 +206,7 @@ const cambiarCuadrado = (evt) => {
   activoDDA = false;
   activocirculo = false;
   isErasing = false;
+  activopoligono = false;
   startX = startY = endX = endY = undefined; // Reinicia las variables
   mainCanvas.style.cursor = activocuadrado ? "crosshair" : "default";
 };
@@ -208,6 +219,7 @@ const cambiarDDA = (evt) => {
   activoDDA = !activoDDA;
   activocirculo = false;
   isErasing = false;
+  activopoligono = false;
   startX = startY = endX = endY = undefined; // Reinicia las variables
   mainCanvas.style.cursor = activoDDA ? "crosshair" : "default";
 };
@@ -220,9 +232,24 @@ const cambiarCirculo = (evt) => {
   activoDDA = false;
   activocirculo = !activocirculo;
   isErasing = false;
+  activopoligono = false;
   startX = startY = endX = endY = undefined; // Reinicia las variables
   mainCanvas.style.cursor = isDrawing ? "crosshair" : "default";
 };
+
+const cambiarPoligono = (evt) => {
+  isDrawing = false;
+  activometobasico = false;
+  activobresenham = false;
+  activocuadrado = false;
+  activoDDA = false;
+  activocirculo = false;
+  isErasing = false;
+  activopoligono = !activopoligono;
+  startX = startY = endX = endY = undefined; // Reinicia las variables
+  mainCanvas.style.cursor = isDrawing ? "crosshair" : "default";
+};
+
 
 const cambiarBorrador = () => {
   isDrawing = false;
@@ -232,6 +259,7 @@ const cambiarBorrador = () => {
   activoDDA = false;
   activocirculo = false;
   isErasing = !isErasing;
+  activopoligono = false;
   mainCanvas.style.cursor = isErasing ? "url('eraser.png'), auto" : "crosshair";
 };
 
@@ -329,6 +357,9 @@ cuadradoButton.addEventListener("click", cambiarCuadrado);
 
 const circuloButton = document.getElementById("circulo-button");
 circuloButton.addEventListener("click", cambiarCirculo);
+
+const poligonoButton = document.getElementById("poligono-button");
+poligonoButton.addEventListener("click", cambiarPoligono);
 
 const eraseButton = document.getElementById("erase-button");
 eraseButton.addEventListener("click", cambiarBorrador);
