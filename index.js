@@ -156,7 +156,7 @@ function drawcirculo(x1, x2, y1, y2) {
 function drawpoligono(x1, x2, y1, y2) {
   context.beginPath();
   context.moveTo();
-  
+  context.stroke();
 }
 
 const cambiarHerramienta = (evt) => {
