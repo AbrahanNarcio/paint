@@ -153,6 +153,23 @@ function drawcirculo(x1, x2, y1, y2) {
   context.stroke();
 }
 
+// function drawcirculo(x1, x2, y1, y2) {
+//   let centerX, centerY;
+//   let radius;
+//   // Calcula el centro del círculo
+//   centerX = (x1 + x2) / 2;
+//   centerY = (y1 + y2) / 2;
+
+//   // Calcula el radio del círculo
+//   radius = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) / 2;
+
+//   // Dibuja el círculo
+//   context.beginPath();
+//   context.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+//   context.stroke();
+// }
+
+//Algoritmo del poligono
 function drawpoligono(x1, x2, y1, y2) {
   context.beginPath();
   context.moveTo();
