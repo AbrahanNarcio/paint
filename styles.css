@@ -1,0 +1,116 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinear elementos al principio del contenedor */
+    align-items: center; /* Centrar horizontalmente */
+    height: 100vh;
+}
+
+.grosorTool {
+    margin-top: 20px; /* Espacio adicional desde arriba */
+    display: flex; /* Utilizar flexbox */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.grosorTool p {
+    margin-right: 40px; /* Margen entre el texto y el input de rango */
+}
+
+.colorTool input[type="color"] {
+    width: 50px; /* Ancho */
+    height: 50px; /* Altura */
+    border-radius: 50%; /* Hacerlo circular */
+    border: none; /* Quitar el borde */
+}
+
+.botones {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: flex-end; /* Alinear en la parte inferior */
+    margin-top: auto; /* Empujar hacia abajo para colocar en la parte inferior */
+    margin-bottom: 10px; /* Espacio adicional desde abajo */
+}
+
+.botones button {
+    margin-right: 10px; /* Agregar margen entre los botones */
+}
+
+.toolbox {
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección del flexbox a columna */
+    align-items: center; /* Alinear elementos al inicio */
+    width: 100px; /* Ancho del menú lateral */
+    height: 100vh; /* Altura del menú igual a la altura de la ventana */
+    position: fixed; /* Mantener el menú fijo en la pantalla */
+    top: 0; /* Posición desde arriba */
+    left: 0; /* Posición desde la izquierda */
+    z-index: 1;
+}
+
+.toolbox .tool {
+    margin-top: 20px; /* Añadir un margen inferior a cada elemento del menú */
+}
+
+.tool:hover {
+    transform: scale(2);
+}
+
+.canvas {
+    border: 1px solid #000000;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    top: 10%;
+    z-index: 1;
+}
+
+.undoRedo {
+    position: absolute;
+    bottom: 0;
+    left: 8%;
+    transform: translateX(-50%);
+}
+
+.tool img {
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    background-color: #9c8bff;
+    border:#000000;
+    color: black;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.botones :hover {
+    background-color: #d7d0ff;
+}
+
+/* Estilos para el menú toolbox */
+.toolbox {
+    display: flex;
+    overflow-x: auto;
+    padding: 5px;
+    background-color: #d7d0ff;
+}
+
+.tool {
+    margin-right: 10px;
+}
+
+.canvas-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
